@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/* configuração da página -geral- */
+body{
+    text-align: center;
+    background: linear-gradient(to left, rgb(248, 80, 80), rgb(177, 147, 147), rgba(207, 122, 10, 0.829));
+    
+}
+
+h1{
+  font-family: 'Segoe UI', Tahoma;
+  text-shadow: 2px 2px 2px black;
+  font-size: 70px;
+}
+
+h4{
+  color: #00109e;
+  font-family: 'Segoe UI', Tahoma;
+  text-shadow: 2px 2px 2px rgb(92, 92, 92);
+  font-size: 30px;
+}
+
+
+/* configuração da logo */
+.logo{
+    background-color: rgb(255, 200, 127);
+    height: 200px;
+    width: 250px;
+
+    border: 10px solid rgb(212, 149, 65);
+    padding: 15px 30px;
+    margin: 30px auto 45px auto;
+    outline-style: dashed;
+    outline-color: rgb(35, 219, 189);
+    outline-width: 10px;
+}
+
+/* configuração dos cards */
+.cardProduto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto; 
+  }
+  .cardProduto {
+    border: 5px solid #757575;
+    border-radius: 6px;
+    width: 200px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #dfd475;
+    text-align: center;
+    box-shadow: 1px 1px 10px black;
+  }
+  .cardProduto h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: #ffffff91;
+    border-radius: 7%;
+    opacity: 90%;
+  }
+  .cardProduto button {
+    background-color: #0017e2;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .cardProduto button:hover {
+    background-color: #617fe0;
+  }
+
+  footer{
+    background-color: #8a1313;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    clear: both;
+}
+
+.credito{
+  color: #a1a1a1;
+}
