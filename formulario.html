@@ -71,37 +71,45 @@
    
         <p id="mensagem"></p>
 
-    <script>
-        // Preencher o campo "Item" com o valor da URL
-        const params = new URLSearchParams(window.location.search);
-        const item = params.get('item');
-        if (item) {
-            document.getElementById('item').value = item;
-        }
-
-        function voltarPagina() {
-            window.history.back();
-        }
-
-        const form = document.getElementById("formReserva");
-        const mensagem = document.getElementById("mensagem");
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault(); // Evita o reload da página
-        });
-
-
-
-        // direcionameto dos dados para a planilha 
-
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwEdNaT74l5cRInlYWt8BOtLBbsO6Bq_gRTgdrYWlPZG9QihhUohUOuILjUTAR-e4V9Ew/exec'
-        const forms = document.forms ['google-sheet']
-
-        forms.addEventListener('submit', e => {e.preventDefault () 
-            fetch(scriptURL, {method: 'POST', body: new FormData(forms)}) 
-            .then(response => alert("Item reservado")) 
-            .catch(error => console.error('Error:', error))})
-
-    </script>
+        <script>
+            // Preencher o campo "Item" com o valor da URL
+            const params = new URLSearchParams(window.location.search);
+            const item = params.get('item');
+            if (item) {
+                document.getElementById('item').value = item;
+            } else {
+                console.warn("Nenhum item encontrado na URL.");
+            }
+        
+            function voltarPagina() {
+                window.history.back();
+            }
+        
+            // Configuração do Google Apps Script
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwognXcIKctHFl7iDDbKkYQPo0jTVHkjW9Do_XiocWF8xDFxgqZ1cmzuAdNrNXG4QdUzQ/exec';
+            const forms = document.forms['google-sheet'];
+        
+            forms.addEventListener('submit', e => {
+                e.preventDefault();
+        
+                // Validação opcional
+                const quantidade = document.getElementById('quantidade').value;
+                if (quantidade <= 0 || quantidade > 3) {
+                    alert("A quantidade deve estar entre 1 e 3.");
+                    return;
+                }
+        
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    body: new FormData(forms),
+                })
+                .then(response => alert("Item reservado com sucesso!"))
+                .catch(error => {
+                    console.error('Erro ao enviar:', error);
+                    alert("Houve um erro ao processar a reserva.");
+                });
+            });
+        </script>
+        
 </body>
 </html>
