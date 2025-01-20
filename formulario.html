@@ -19,7 +19,7 @@
     <br><br><br>
 
     
-        <form id="formReserva" action="reserva-processada.html" method="POST">
+        <form id="formReserva" method="POST" name="google-sheet">
             <div class="form-container">
 
                 <div class="form-group"> 
@@ -52,7 +52,7 @@
 
                 <div class="form-group"> 
                     <b><label for="quantidade">Quantidade:</label></b><br>
-                    <input type="number" id="quantidade" name="quantidade" min="1" required>
+                    <input type="number" id="quantidade" name="quantidade" min="1" max="3" required>
                 </div>
 
                 <br><br>
@@ -88,24 +88,19 @@
 
         form.addEventListener("submit", function (e) {
             e.preventDefault(); // Evita o reload da página
-
-            const formData = new FormData(form);
-            const url = "https://script.google.com/macros/library/d/1_PQagEsrTHtyxwBigaG0pdEkXHDT5XA_N0chW4-lSFJNdSSzVw_y__vj/1https://script.google.com/macros/s/AKfycbxhX1t45BQU_-WdfBCnJyB8Fk7bVowt-Af4KlBVIWgVMl3Dg4qKPGUG9IoPPVs43FbTJg/exec"; // Substitua pela URL do seu Web App
-
-            fetch(url, {
-                method: "POST",
-                body: formData,
-            })
-            .then(response => response.text())
-            .then(data => {
-                mensagem.textContent = data; // Mensagem de sucesso
-                form.reset(); // Limpa o formulário
-            })
-            .catch(error => {
-                mensagem.textContent = "Erro ao enviar os dados!";
-                console.error("Erro:", error);
-            });
         });
+
+
+
+        // direcionameto dos dados para a planilha 
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwEdNaT74l5cRInlYWt8BOtLBbsO6Bq_gRTgdrYWlPZG9QihhUohUOuILjUTAR-e4V9Ew/exec'
+        const forms = document.forms ['google-sheet']
+
+        forms.addEventListener('submit', e => {e.preventDefault () 
+            fetch(scriptURL, {method: 'POST', body: new FormData(forms)}) 
+            .then(response => alert("Item reservado")) 
+            .catch(error => console.error('Error:', error))})
 
     </script>
 </body>
