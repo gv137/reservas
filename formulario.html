@@ -52,7 +52,7 @@
 
                 <div class="form-group"> 
                     <b><label for="quantidade">Quantidade:</label></b><br>
-                    <input type="number" id="quantidade" name="quantidade" min="1" max="3" required>
+                    <input type="number" id="quantidade" name="quantidade" min="1" required>
                 </div>
 
                 <br><br>
@@ -86,10 +86,10 @@
             }
         
             // Configuração do Google Apps Script
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzhLwSKxOp1MoXjNAXxeDp1vaKnHusKyCNtWrlADlLnjLlMTC832184IWcmjFZntzAPFg/exec';
-            const forms = document.forms['google-sheet'];
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz7QlAx8aCRDvdwJneflNIMWud78eUN5vu_55fySySdPoMoMqtXq43_afTm5b_f5e80/exec';
+            const form = document.forms['google-sheet'];
         
-            forms.addEventListener('submit', e => {
+            form.addEventListener('submit', e => {
                 e.preventDefault();
         
                 // Validação opcional
@@ -101,7 +101,7 @@
         
                 fetch(scriptURL, { 
                     method: 'POST', 
-                    body: new FormData(forms),
+                    body: new FormData(form),
                 })
                 .then(response => alert("Item reservado com sucesso!"))
                 .catch(error => {
