@@ -96,7 +96,10 @@
                     method: 'POST', 
                     body: new FormData(form),
                 })
-                .then(response => alert("Item reservado com sucesso!"))
+                .then(response => {alert("Item reservado com sucesso!");
+                form.reset();
+            }
+            )
                 .catch(error => {
                     console.error('Erro ao enviar:', error);
                     alert("Houve um erro ao processar a reserva.");
