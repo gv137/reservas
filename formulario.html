@@ -64,7 +64,7 @@
 
                 <br><br>
 
-                <button type="submit">Enviar Reserva</button>
+                <button type="submit" name="botao">Enviar Reserva</button>
 
             </div>
         </form>
@@ -91,6 +91,7 @@
         
             form.addEventListener('submit', e => {
                 e.preventDefault();
+                document.getElementById("botao").disabled = true;
         
                 fetch(scriptURL, { 
                     method: 'POST', 
