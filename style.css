@@ -3,7 +3,7 @@
 /* configuração da página -geral- */
 body{
     text-align: center;
-    background: linear-gradient(to left, rgb(248, 80, 80), rgb(177, 147, 147), rgba(207, 122, 10, 0.829));
+    background: radial-gradient(circle, rgb(117, 117, 117), rgb(173, 166, 166)); 
     
 }
 
@@ -23,16 +23,15 @@ h4{
 
 /* configuração da logo */
 .logo{
-    background-color: rgb(255, 200, 127);
+    
     height: 200px;
-    width: 250px;
+    width: 350px;
 
-    border: 10px solid rgb(212, 149, 65);
+
     padding: 15px 30px;
     margin: 30px auto 45px auto;
-    outline-style: dashed;
-    outline-color: rgb(35, 219, 189);
-    outline-width: 10px;
+    background: radial-gradient(circle,  rgba(204, 204, 204, 0.103), rgba(173, 166, 166, 0.007));
+
 }
 
 /* configuração dos cards */
@@ -51,12 +50,12 @@ h4{
     margin: 0 auto; 
   }
   .cardProduto {
-    border: 5px solid #757575;
+    border: 5px solid #999797;
     border-radius: 6px;
     width: 200px;
     margin: 20px;
     padding: 15px;
-    background-color: #dfd475;
+    background-color: #E0E0E0;
     text-align: center;
     box-shadow: 1px 1px 10px black;
   }
@@ -80,7 +79,7 @@ h4{
   }
 
   footer{
-    background-color: #8a1313;
+    background-color: #5f5f5fc4;
     color: #fff;
     padding: 10px;
     text-align: center;
