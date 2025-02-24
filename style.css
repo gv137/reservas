@@ -9,12 +9,12 @@ body{
 
 h1{
   font-family: 'Segoe UI', Tahoma;
-  text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255);
   font-size: 70px;
 }
 
 h4{
-  color: #00109e;
+  color: #424ebd;
   font-family: 'Segoe UI', Tahoma;
   text-shadow: 2px 2px 2px rgb(92, 92, 92);
   font-size: 30px;
@@ -24,8 +24,8 @@ h4{
 /* configuração da logo */
 .logo{
     
-    height: 200px;
-    width: 350px;
+    height: 155px;
+    width: 270px;
 
 
     padding: 15px 30px;
@@ -87,6 +87,6 @@ h4{
 }
 
 .credito{
-  color: #a1a1a1;
+  color: #000000;
 }
 
