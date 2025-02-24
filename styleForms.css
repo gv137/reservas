@@ -46,10 +46,15 @@ input{
     background-color: #888888;
     border-radius: 12px;
     box-shadow: 1px 2px 10px #ff0000;
+    
 }
 
 .form-group{
     text-align: center;
     align-items: center;
     margin: 4px;
+}
+
+#referencia{
+    size: 8px;
 }
