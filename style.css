@@ -90,3 +90,9 @@ h4{
   color: #000000;
 }
 
+@media (max-width: 480px) {
+    .form-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
